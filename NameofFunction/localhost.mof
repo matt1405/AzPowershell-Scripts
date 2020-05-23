@@ -1,0 +1,49 @@
+/*
+@TargetNode='localhost'
+@GeneratedBy=Matt Hopkinson
+@GenerationDate=05/23/2020 19:12:36
+@GenerationHost=DESKTOP-783O5BG
+*/
+
+instance of MSFT_RoleResource as $MSFT_RoleResource1ref
+{
+ResourceID = "[WindowsFeature]WebServerRole";
+ Ensure = "Present";
+ SourceInfo = "C:\\Users\\Matt Hopkinson\\Documents\\GitHub\\AzPowershell-Scripts\\PS_DSC_Architecture.ps1::15::9::WindowsFeature";
+ Name = "Feature Name";
+ ModuleName = "PsDesiredStateConfiguration";
+
+ModuleVersion = "1.0";
+ ConfigurationName = "NameofFunction";
+};
+instance of MSFT_RoleResource as $MSFT_RoleResource2ref
+{
+ResourceID = "[WindowsFeature]IISManagement";
+ Ensure = "Present";
+ SourceInfo = "C:\\Users\\Matt Hopkinson\\Documents\\GitHub\\AzPowershell-Scripts\\PS_DSC_Architecture.ps1::20::5::WindowsFeature";
+ Name = "Web-Mgment-Console";
+ ModuleName = "PsDesiredStateConfiguration";
+
+ModuleVersion = "1.0";
+DependsOn = {
+    "[WindowsFeature]WebServerRole"};
+ ConfigurationName = "NameofFunction";
+};
+instance of OMI_ConfigurationDocument
+
+                    {
+ Version="2.0.0";
+
+                        MinimumCompatibleVersion = "1.0.0";
+
+                        CompatibleVersionAdditionalProperties= {"Omi_BaseResource:ConfigurationName"};
+
+                        Author="Matt Hopkinson";
+
+                        GenerationDate="05/23/2020 19:12:36";
+
+                        GenerationHost="DESKTOP-783O5BG";
+
+                        Name="NameofFunction";
+
+                    };
